@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk buildConfig.compileSdk
+
+    defaultConfig {
+        applicationId "com.example.courcework"
+        minSdk buildConfig.minSdk
+        targetSdk buildConfig.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        buildConfigField "String", "API_KEY", "\"${properties.getProperty("API_KEY")}\""
+        buildConfigField "String", "EMAIL", "\"${properties.getProperty("EMAIL")}\""
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+    }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation deps.androidx.core
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.constraintlayout
+    implementation deps.androidx.activity
+    implementation deps.androidx.livedata
+    implementation deps.androidx.media3
+
+    implementation deps.dagger.dagger
+    kapt deps.dagger.kapt
+
+    implementation deps.elmslie.core
+    implementation deps.elmslie.android
+    implementation deps.elmslie.coroutines
+
+    implementation deps.material
+    implementation deps.shimmer
+    implementation deps.splashscreen
+
+    implementation deps.coil
+
+    implementation deps.cicerone
+
+    implementation deps.retrofit.retrofit
+    implementation deps.retrofit.gson
+    implementation deps.okhttp.okhttp
+    implementation deps.okhttp.logginginterceptor
+    androidTestImplementation deps.okhttp.mockwebserver
+
+    implementation deps.room.runtime
+    implementation deps.room.ktx
+    kapt deps.room.kapt
+
+    debugImplementation deps.leakcanary
+
+    testImplementation deps.junit
+    testImplementation deps.androidx.test.core
+    testImplementation deps.coroutinestest
+
+    testImplementation deps.mockito.core
+    testImplementation deps.mockito.inline
+    testImplementation deps.mockito.kotlin
+
+    androidTestImplementation deps.kaspresso
+    androidTestImplementation deps.androidx.test.junitktx
+    androidTestImplementation deps.androidx.test.runner
+    debugImplementation deps.androidx.test.monitor
+    debugImplementation deps.androidx.test.fragment
+    androidTestUtil deps.androidx.test.orchestrator
+}

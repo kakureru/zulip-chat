@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="ReactionView">
+        <attr name="count" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="EmojiView">
+        <attr name="emoji" format="string" />
+    </declare-styleable>
+
+    <attr name="monochromePrimaryColor" format="color" />
+
+    <!--  Chat  -->
+    <attr name="messageInputBackground" format="color" />
+    <attr name="messageBackground" format="color" />
+    <attr name="ownMessageBackground" format="color" />
+    <attr name="reactionDefaultBackground" format="color" />
+    <attr name="reactionSelectedBackground" format="color" />
+    <attr name="reactionTextColor" format="color" />
+    <attr name="topicTitleBackground" format="color" />
+    <attr name="dateBackground" format="color" />
+</resources>

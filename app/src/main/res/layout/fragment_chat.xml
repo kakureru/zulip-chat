@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.presentation.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            style="@style/BackButton" />
+
+        <TextView
+            android:id="@+id/stream_name"
+            style="@style/Toolbar.Title"
+            tools:text="#Stream" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/topic_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/topicTitleBackground"
+        android:gravity="center"
+        android:paddingVertical="6dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="Topic: #testing" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/text_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topic_name"
+        app:stackFromEnd="true"
+        tools:itemCount="3"
+        tools:listitem="@layout/custom_message" />
+
+    <com.example.courcework.app.presentation.screens.chat.custom.CustomEditStatus
+        android:id="@+id/edit_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/text_message" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_message"
+        style="@style/MessageInputField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_message_field"
+        android:hint="@string/hint_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/action_button_frame" />
+
+    <FrameLayout
+        android:id="@+id/action_button_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_message"
+        tools:ignore="RtlHardcoded">
+
+        <ImageButton
+            android:id="@+id/btn_attach"
+            style="@style/ActionButton"
+            android:alpha="0.5"
+            android:background="@null"
+            android:contentDescription="@string/action_attach"
+            android:src="@drawable/ic_add_circle"
+            app:tint="@color/grey_light" />
+
+        <ImageButton
+            android:id="@+id/btn_sendMessage"
+            style="@style/ActionButton"
+            android:contentDescription="@string/action_send_message"
+            android:padding="10dp"
+            android:src="@drawable/ic_send"
+            android:visibility="gone"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_accept"
+            style="@style/ActionButton"
+            android:contentDescription="@string/action_done"
+            android:padding="5dp"
+            android:src="@drawable/ic_check_circle"
+            android:visibility="gone"
+            app:tint="@color/white" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="?attr/colorPrimary"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

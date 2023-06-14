@@ -1,0 +1,55 @@
+{
+	"messages": [
+		{
+			"id": 354368365,
+			"sender_id": 604430,
+			"content": "Test message",
+			"recipient_id": 1047523,
+			"timestamp": 1682772528,
+			"subject": "test",
+			"reactions": [
+				{
+					"emoji_name": "cold_face",
+					"emoji_code": "1f976",
+					"reaction_type": "unicode_emoji",
+					"user": {
+						"email": "user605342@tinkoff-android-spring-2023.zulipchat.com",
+						"id": 605342,
+						"full_name": "Nikita"
+					},
+					"user_id": 605342
+				},
+				{
+					"emoji_name": "working_on_it",
+					"emoji_code": "1f6e0",
+					"reaction_type": "unicode_emoji",
+					"user": {
+						"email": "user604644@tinkoff-android-spring-2023.zulipchat.com",
+						"id": 604644,
+						"full_name": "Dmitriy Brovchenko"
+					},
+					"user_id": 604644
+				},
+				{
+					"emoji_name": "working_on_it",
+					"emoji_code": "1f6e0",
+					"reaction_type": "unicode_emoji",
+					"user": {
+						"email": "user604728@tinkoff-android-spring-2023.zulipchat.com",
+						"id": 604728,
+						"full_name": "Вячеслав Авдюхов"
+					},
+					"user_id": 604728
+				}
+			],
+			"sender_full_name": "Ilya Lis",
+			"sender_email": "user604430@tinkoff-android-spring-2023.zulipchat.com",
+			"sender_realm_str": "tinkoff-android-spring-2023",
+			"display_recipient": "dev_to_dev",
+			"type": "stream",
+			"stream_id": 380669,
+			"avatar_url": "https://secure.gravatar.com/avatar/4ed8cd4e64e674bf8faedcae5dd2b0c9?d=identicon&version=1",
+			"content_type": "text/x-markdown"
+		}
+	]
+}

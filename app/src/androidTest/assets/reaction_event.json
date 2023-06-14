@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"type": "reaction",
+			"op": "add",
+			"user_id": 604450,
+			"user": {
+				"user_id": 604450,
+				"email": "user604450@tinkoff-android-spring-2023.zulipchat.com",
+				"full_name": "Svyatoslav Lukyanov"
+			},
+			"message_id": 354368365,
+			"emoji_name": "smile",
+			"emoji_code": "1f642",
+			"reaction_type": "unicode_emoji",
+			"id": 0
+		}
+	]
+}
